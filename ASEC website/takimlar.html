@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Takımlar - ASEC Kulübü</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="takimlar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="images/asec-logo.png" alt="ASEC Logo">
+                <h1>ASEC Kulübü</h1>
+            </div>
+            <nav>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Ana Sayfa</a></li>
+                    <li class="dropdown">
+                        <a href="#"><i class="fas fa-info-circle"></i> Hakkımızda <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="hakkimizda.html">Kulüp Hakkında</a></li>
+                            <li><a href="takimlar.html" class="active"><i class="fas fa-users"></i> Takımlar</a></li>
+                            <li><a href="galeri.html"><i class="fas fa-images"></i> Galeri</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="duyurular.html"><i class="fas fa-bullhorn"></i> Duyurular</a></li>
+                    <li><a href="etkinlikler.html"><i class="fas fa-calendar-alt"></i> Etkinlikler</a></li>
+                    <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                    <li><a href="iletisim.html"><i class="fas fa-envelope"></i> İletişim</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="teams-header">
+            <div class="header-bg"></div>
+            <div class="container">
+                <div class="header-content">
+                    <h2>Takımlarımız</h2>
+                    <p>ASEC Kulübü bünyesinde faaliyet gösteren uzman ekiplerimiz</p>
+                    <div class="header-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Aktif Takım</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">25+</span>
+                            <span class="stat-label">Üye</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Proje</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="teams-grid">
+            <div class="container">
+                <!-- Siber Güvenlik Takımı -->
+                <div class="team-card">
+                    <div class="team-banner">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="team-content">
+                        <h3>Siber Güvenlik Takımı</h3>
+                        <p class="team-description">
+                            Siber güvenlik alanında araştırma, eğitim ve CTF yarışmalarına katılım sağlayan ekibimiz.
+                        </p>
+                        <div class="team-members">
+                            <div class="member-card">
+                                <div class="member-image">
+                                    <img src="images/team/member1.jpg" alt="Üye Adı">
+                                </div>
+                                <div class="member-info">
+                                    <h4>Ahmet Yılmaz</h4>
+                                    <p class="member-role">Takım Lideri</p>
+                                    <div class="member-social">
+                                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                                        <a href="#"><i class="fab fa-github"></i></a>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Diğer üye kartları buraya eklenebilir -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yazılım Geliştirme Takımı -->
+                <div class="team-card">
+                    <div class="team-banner">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="team-content">
+                        <h3>Yazılım Geliştirme Takımı</h3>
+                        <p class="team-description">
+                            Web ve mobil uygulama geliştirme projeleri yürüten ekibimiz.
+                        </p>
+                        <div class="team-members">
+                            <div class="member-card">
+                                <div class="member-image">
+                                    <img src="images/team/member2.jpg" alt="Üye Adı">
+                                </div>
+                                <div class="member-info">
+                                    <h4>Zeynep Kaya</h4>
+                                    <p class="member-role">Yazılım Geliştirici</p>
+                                    <div class="member-social">
+                                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                                        <a href="#"><i class="fab fa-github"></i></a>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Diğer üye kartları buraya eklenebilir -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yapay Zeka Takımı -->
+                <div class="team-card">
+                    <div class="team-banner">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="team-content">
+                        <h3>Yapay Zeka Takımı</h3>
+                        <p class="team-description">
+                            Makine öğrenmesi ve yapay zeka projeleri geliştiren ekibimiz.
+                        </p>
+                        <div class="team-members">
+                            <div class="member-card">
+                                <div class="member-image">
+                                    <img src="images/team/member3.jpg" alt="Üye Adı">
+                                </div>
+                                <div class="member-info">
+                                    <h4>Mehmet Demir</h4>
+                                    <p class="member-role">AI Araştırmacısı</p>
+                                    <div class="member-social">
+                                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                                        <a href="#"><i class="fab fa-github"></i></a>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Diğer üye kartları buraya eklenebilir -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>İletişim</h3>
+                <p><i class="fas fa-envelope"></i> info@aseckulubu.com</p>
+                <p><i class="fas fa-phone"></i> +90 555 123 4567</p>
+                <p><i class="fas fa-map-marker-alt"></i> Teknoloji Fakültesi, Üniversite Kampüsü</p>
+            </div>
+            <div class="footer-section">
+                <h3>Sosyal Medya</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ASEC Kulübü. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etkinlikler - ASEC Kulübü</title>
+    <link rel="stylesheet" href="etkinlikler.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="images/asec-logo.png" alt="ASEC Logo">
+                <h1>ASEC Kulübü</h1>
+            </div>
+            <nav>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+    <li><a href="index.html"><i class="fas fa-home"></i> Ana Sayfa</a></li>
+    <li class="dropdown">
+        <a href="#"><i class="fas fa-info-circle"></i> Hakkımızda <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown-menu">
+            <li><a href="hakkimizda.html">Kulüp Hakkında</a></li>
+            <li><a href="takimlar.html"><i class="fas fa-users"></i> Takımlar</a></li>
+            <li><a href="galeri.html"><i class="fas fa-images"></i> Galeri</a></li>
+        </ul>
+    </li>
+    <li><a href="duyurular.html"><i class="fas fa-bullhorn"></i> Duyurular</a></li>
+    <li><a href="etkinlikler.html"><i class="fas fa-calendar-alt"></i> Etkinlikler</a></li>
+    <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+    <li><a href="iletisim.html"><i class="fas fa-envelope"></i> İletişim</a></li>
+</ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="events-container">
+            <h2 class="page-title">Etkinliklerimiz</h2>
+            
+            <!-- Yaklaşan Etkinlikler -->
+            <section class="events-section">
+                <h3 class="section-title">Yaklaşan Etkinlikler</h3>
+                <div class="events-grid">
+                    <div class="event-card upcoming">
+                        <div class="event-date">
+                            <span class="day">25</span>
+                            <span class="month">Mayıs</span>
+                        </div>
+                        <div class="event-details">
+                            <h4>Siber Güvenlik Workshop</h4>
+                            <p class="event-description">Temel seviye siber güvenlik eğitimi ve uygulamalı workshop.</p>
+                            <div class="event-info">
+                                <span><i class="fas fa-clock"></i> 14:00 - 17:00</span>
+                                <span><i class="fas fa-map-marker-alt"></i> Lab-3, Teknoloji Fakültesi</span>
+                            </div>
+                            <a href="#" class="register-btn">Kayıt Ol</a>
+                        </div>
+                    </div>
+
+                    <div class="event-card upcoming">
+                        <div class="event-date">
+                            <span class="day">30</span>
+                            <span class="month">Mayıs</span>
+                        </div>
+                        <div class="event-details">
+                            <h4>Yapay Zeka Semineri</h4>
+                            <p class="event-description">Yapay zeka ve makine öğrenmesi üzerine kapsamlı seminer.</p>
+                            <div class="event-info">
+                                <span><i class="fas fa-clock"></i> 15:30 - 18:30</span>
+                                <span><i class="fas fa-map-marker-alt"></i> Konferans Salonu</span>
+                            </div>
+                            <a href="#" class="register-btn">Kayıt Ol</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Geçmiş Etkinlikler -->
+            <section class="events-section past-events">
+                <h3 class="section-title">Geçmiş Etkinlikler</h3>
+                <div class="events-grid">
+                    <div class="event-card past">
+                        <div class="event-date">
+                            <span class="day">15</span>
+                            <span class="month">Nisan</span>
+                        </div>
+                        <div class="event-details">
+                            <h4>Web Geliştirme Atölyesi</h4>
+                            <p class="event-description">Modern web teknolojileri ve framework'ler üzerine workshop.</p>
+                            <div class="event-info">
+                                <span><i class="fas fa-clock"></i> Tamamlandı</span>
+                                <span><i class="fas fa-users"></i> 45 Katılımcı</span>
+                            </div>
+                            <a href="#" class="view-photos-btn">Fotoğrafları Gör</a>
+                        </div>
+                    </div>
+
+                    <div class="event-card past">
+                        <div class="event-date">
+                            <span class="day">10</span>
+                            <span class="month">Nisan</span>
+                        </div>
+                        <div class="event-details">
+                            <h4>Kariyer Günleri</h4>
+                            <p class="event-description">Sektör liderleri ile networking ve kariyer fırsatları.</p>
+                            <div class="event-info">
+                                <span><i class="fas fa-clock"></i> Tamamlandı</span>
+                                <span><i class="fas fa-users"></i> 75 Katılımcı</span>
+                            </div>
+                            <a href="#" class="view-photos-btn">Fotoğrafları Gör</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>İletişim</h3>
+                <p><i class="fas fa-envelope"></i> info@aseckulubu.com</p>
+                <p><i class="fas fa-phone"></i> +90 555 123 4567</p>
+                <p><i class="fas fa-map-marker-alt"></i> Teknoloji Fakültesi, Üniversite Kampüsü</p>
+            </div>
+            <div class="footer-section">
+                <h3>Sosyal Medya</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ASEC Kulübü. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

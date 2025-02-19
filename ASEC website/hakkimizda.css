@@ -1,63 +1,48 @@
+/* Genel Stiller */
 :root {
     --primary-color: #2c3e50;
     --secondary-color: #3498db;
     --accent-color: #e74c3c;
     --success-color: #2ecc71;
-    --warning-color: #f1c40f;
     --text-color: #333;
     --light-bg: #f5f6fa;
     --white: #ffffff;
     --shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
+    padding-top: 80px;
+    background-color: var(--light-bg);
 }
 
-/* Header Styles */
-header {
-    background-color: var(--white);
-    box-shadow: var(--shadow);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-
-.header-container {
+.container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 0 1rem;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+/* Hakkımızda Header Bölümü */
+.about-header {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 4rem 0;
+    text-align: center;
+    margin-bottom: 4rem;
 }
 
-.logo img {
-    height: 50px;
-}
-
-.logo h1 {
-    font-size: 1.5rem;
-    color: var(--primary-color);
+.about-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
     font-weight: 600;
 }
 
-/* Navigation Styles */
+.about-header p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    opacity: 0.9;
+}
 nav {
     display: flex;
     align-items: center;
@@ -192,208 +177,178 @@ nav {
     height: 20px; /* Menüye geçiş için boşluk */
     background: transparent;
 }
-/* Hero Section */
-.hero {
-    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('images/hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: var(--white);
-    margin-top: 80px;
+
+/* Vizyon ve Misyon Bölümü */
+.vision-mission {
+    margin-bottom: 4rem;
 }
 
-.hero-content {
-    max-width: 800px;
-    padding: 2rem;
-}
-
-.hero-content h2 {
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
-}
-
-.hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-}
-
-.cta-button {
-    display: inline-block;
-    padding: 1rem 2rem;
-    background-color: var(--accent-color);
-    color: var(--white);
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: #c0392b;
-}
-
-/* Features Section */
-.features {
-    padding: 4rem 0;
-    background-color: var(--white);
-}
-
-.features h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: var(--primary-color);
-}
-
-.features-grid {
-    max-width: 1200px;
-    margin: 0 auto;
+.vision-mission .container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    padding: 0 1rem;
 }
 
-.feature-card {
-    text-align: center;
+.vision, .mission {
+    background: var(--white);
     padding: 2rem;
-    background-color: var(--white);
-    border-radius: 10px;
+    border-radius: 15px;
     box-shadow: var(--shadow);
     transition: transform 0.3s ease;
 }
 
-.feature-card:hover {
+.vision:hover, .mission:hover {
     transform: translateY(-5px);
 }
 
-.feature-card i {
-    font-size: 3rem;
-    color: var(--secondary-color);
+.vision h3, .mission h3 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
     margin-bottom: 1.5rem;
-}
-
-.feature-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: var(--primary-color);
-}
-
-/* Upcoming Events Section */
-.upcoming-events {
-    padding: 4rem 0;
-    background-color: var(--light-bg);
-}
-
-.upcoming-events h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: var(--primary-color);
-}
-
-.events-slider {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 0 1rem;
-}
-
-.event-card {
-    background-color: var(--white);
-    border-radius: 10px;
-    padding: 2rem;
-    box-shadow: var(--shadow);
-}
-
-.event-date {
-    font-size: 1.2rem;
-    color: var(--accent-color);
-    margin-bottom: 1rem;
-}
-
-.event-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: var(--primary-color);
-}
-
-.event-button {
-    display: inline-block;
-    padding: 0.8rem 1.5rem;
-    background-color: var(--secondary-color);
-    color: var(--white);
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 1rem;
-    transition: background-color 0.3s ease;
-}
-
-.event-button:hover {
-    background-color: #2980b9;
-}
-
-/* Footer Styles */
-footer {
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: 4rem 0 2rem;
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    padding: 0 1rem;
-}
-
-.footer-section h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.footer-section p {
-    margin-bottom: 1rem;
-}
-
-.social-links {
     display: flex;
+    align-items: center;
     gap: 1rem;
 }
 
-.social-links a {
-    color: var(--white);
-    font-size: 1.5rem;
-    transition: color 0.3s ease;
-}
-
-.social-links a:hover {
+.vision i, .mission i {
     color: var(--secondary-color);
+    font-size: 2rem;
 }
 
-.footer-bottom {
+.vision p, .mission p {
+    color: var(--text-color);
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+/* Değerlerimiz Bölümü */
+.values {
+    padding: 4rem 0;
+}
+
+.values h3 {
     text-align: center;
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
-}
-
-/* Mobile Menu */
-.mobile-menu {
-    display: none;
-    font-size: 1.5rem;
-    cursor: pointer;
+    font-size: 2.2rem;
     color: var(--primary-color);
+    margin-bottom: 3rem;
+    position: relative;
 }
 
-/* Responsive Design */
+.values h3::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--secondary-color);
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.value-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.value-card i {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    background: var(--light-bg);
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.value-card:hover i {
+    background: var(--secondary-color);
+    color: var(--white);
+    transform: rotateY(360deg);
+}
+
+.value-card h4 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.value-card p {
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .about-header {
+        padding: 3rem 0;
+    }
+
+    .about-header h2 {
+        font-size: 2rem;
+    }
+
+    .about-header p {
+        font-size: 1rem;
+    }
+
+    .vision h3, .mission h3 {
+        font-size: 1.5rem;
+    }
+
+    .vision i, .mission i {
+        font-size: 1.5rem;
+    }
+
+    .values h3 {
+        font-size: 1.8rem;
+    }
+
+    .value-card i {
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-header {
+        padding: 2rem 0;
+    }
+
+    .about-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .vision, .mission {
+        padding: 1.5rem;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .value-card {
+        padding: 1.5rem;
+    }
+}
 @media (max-width: 968px) {
     .mobile-menu {
         display: block;

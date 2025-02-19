@@ -2,10 +2,10 @@
     --primary-color: #2c3e50;
     --secondary-color: #3498db;
     --accent-color: #e74c3c;
-    --success-color: #25D366;
+    --success-color: #2ecc71;
+    --warning-color: #f1c40f;
     --text-color: #333;
     --light-bg: #f5f6fa;
-    --border-color: #e1e1e1;
     --white: #ffffff;
     --shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
@@ -21,9 +21,10 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     padding-top: 80px;
+    background-color: var(--light-bg);
 }
 
-/* Header Styles */
+/* Header Styles - Index ile aynı */
 header {
     background-color: var(--white);
     box-shadow: var(--shadow);
@@ -191,297 +192,194 @@ nav {
     height: 20px; /* Menüye geçiş için boşluk */
     background: transparent;
 }
-
-/* Ana Container */
-.contact-container {
+/* Announcements Styles */
+.announcements-container {
     max-width: 1200px;
     margin: 2rem auto;
-    padding: 2rem;
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 3rem;
-    background: var(--white);
-    border-radius: 15px;
-    box-shadow: var(--shadow);
+    padding: 0 1rem;
 }
 
-/* İletişim Bilgileri Bölümü */
-.contact-info {
-    padding: 2rem;
-    background: var(--light-bg);
-    border-radius: 10px;
-}
-
-.contact-info h2 {
-    color: var(--primary-color);
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    position: relative;
-}
-
-.contact-info h2::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    width: 50px;
-    height: 3px;
-    background: var(--secondary-color);
-}
-
-.contact-details {
-    display: grid;
-    gap: 1.5rem;
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 1rem;
-    background: var(--white);
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-}
-
-.contact-item:hover {
-    transform: translateX(10px);
-}
-
-.contact-item i {
-    font-size: 1.8rem;
-    color: var(--secondary-color);
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(52, 152, 219, 0.1);
-    border-radius: 50%;
-}
-
-.contact-item p {
-    margin: 0;
-    color: var(--text-color);
-}
-
-/* Form Bölümü */
-.contact-form {
-    padding: 2rem;
-    background: var(--white);
-    border-radius: 10px;
-    box-shadow: var(--shadow);
-}
-
-.contact-form h3 {
-    color: var(--primary-color);
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
+.page-title {
     text-align: center;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.8rem;
-    font-weight: 500;
     color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
 }
 
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 1rem;
-    border: 2px solid var(--border-color);
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
+.announcements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
-    border-color: var(--secondary-color);
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+.announcement-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+    border-top: 4px solid var(--secondary-color);
 }
 
-.submit-btn {
-    width: 100%;
-    padding: 1rem;
+.announcement-card:hover {
+    transform: translateY(-5px);
+}
+
+.announcement-card.important {
+    border-top-color: var(--accent-color);
+}
+
+.announcement-card.workshop {
+    border-top-color: var(--success-color);
+}
+
+.announcement-card.event {
+    border-top-color: var(--warning-color);
+}
+
+.announcement-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.badge {
     background: var(--secondary-color);
     color: var(--white);
-    border: none;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
 }
 
-.submit-btn:hover {
-    background: var(--primary-color);
-    transform: translateY(-2px);
+.announcement-card.important .badge {
+    background: var(--accent-color);
 }
 
-/* Sosyal Medya Bölümü */
-.social-media {
-    grid-column: 1 / -1;
-    text-align: center;
-    padding: 2rem;
-    background: var(--light-bg);
-    border-radius: 10px;
-    margin-top: 2rem;
+.announcement-card.workshop .badge {
+    background: var(--success-color);
 }
 
-.social-media h3 {
+.announcement-card.event .badge {
+    background: var(--warning-color);
+}
+
+.date {
+    color: #666;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.announcement-card h3 {
     color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.announcement-card p {
+    color: var(--text-color);
     margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: gap 0.3s ease;
+}
+
+.read-more:hover {
+    gap: 0.8rem;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    display: none;
     font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .mobile-menu {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        padding: 1rem;
+        flex-direction: column;
+        box-shadow: var(--shadow);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 0.5rem 0;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .page-title {
+        font-size: 2rem;
+    }
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+.footer-section h3 {
+    margin-bottom: 1rem;
 }
 
 .social-links {
     display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin: 2rem 0;
+    gap: 1rem;
 }
 
-.social-link {
-    font-size: 2rem;
-    color: var(--primary-color);
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--white);
-    border-radius: 50%;
-    transition: all 0.3s ease;
-    box-shadow: var(--shadow);
-}
-
-.social-link:hover {
+.social-links a {
     color: var(--white);
-    background: var(--secondary-color);
-    transform: translateY(-5px);
-}
-
-/* WhatsApp Bölümü */
-.whatsapp-group {
-    margin-top: 2rem;
-    padding: 2rem;
-    background: var(--white);
-    border-radius: 10px;
-    box-shadow: var(--shadow);
-}
-
-.whatsapp-group h3 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-}
-
-.whatsapp-group p {
-    color: var(--text-color);
-    margin-bottom: 1.5rem;
-}
-
-.whatsapp-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.8rem;
-    background: var(--success-color);
-    color: var(--white);
-    padding: 1rem 2rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.whatsapp-button i {
     font-size: 1.5rem;
+    transition: color 0.3s ease;
 }
 
-.whatsapp-button:hover {
-    background: #128C7E;
-    transform: translateY(-2px);
+.social-links a:hover {
+    color: var(--secondary-color);
 }
 
-/* Responsive Tasarım */
-@media (max-width: 968px) {
-    .contact-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .contact-container {
-        margin: 1rem;
-        padding: 1rem;
-    }
-
-    .contact-info,
-    .contact-form {
-        padding: 1.5rem;
-    }
-
-    .social-links {
-        gap: 1rem;
-    }
-
-    .social-link {
-        width: 50px;
-        height: 50px;
-        font-size: 1.5rem;
-    }
-}
-
-/* Animasyonlar */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.contact-info,
-.contact-form,
-.social-media {
-    animation: fadeIn 0.8s ease-out forwards;
-}
-
-.contact-form {
-    animation-delay: 0.2s;
-}
-
-.social-media {
-    animation-delay: 0.4s;
-}
-
-.page-header {
+.footer-bottom {
     text-align: center;
-    padding: 4rem 2rem 2rem;
-    background: var(--light-bg);
-}
-
-.page-header h1 {
-    color: var(--primary-color);
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.page-header p {
-    color: var(--text-color);
-    max-width: 600px;
-    margin: 0 auto;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
 }
 @media (max-width: 968px) {
     .mobile-menu {
