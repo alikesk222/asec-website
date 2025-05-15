@@ -49,41 +49,76 @@ $result = mysqli_query($conn, $sql);
             </div>
             <?php endif; ?>
 
-            <div class="row">
-                <?php if(mysqli_num_rows($result) > 0): ?>
-                    <?php while($row = mysqli_fetch_assoc($result)): ?>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="card blog-card h-100">
-                                <?php if($row['image_url']): ?>
-                                    <img src="<?php echo htmlspecialchars($row['image_url']); ?>" class="card-img-top" alt="Blog Görseli" style="height: 200px; object-fit: cover;">
-                                <?php endif; ?>
-                                <div class="card-body">
-                                    <h5 class="card-title"><?php echo htmlspecialchars($row['title']); ?></h5>
-                                    <p class="card-text text-muted">
-                                        <small>
-                                            <i class="far fa-calendar-alt"></i> 
-                                            <?php echo date('d.m.Y', strtotime($row['created_at'])); ?>
-                                        </small>
-                                    </p>
-                                    <div class="action-buttons">
-                                        <a href="blog-duzenle.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-primary">
-                                            <i class="fas fa-edit"></i> Düzenle
-                                        </a>
-                                        <a href="javascript:void(0);" onclick="deleteBlog(<?php echo $row['id']; ?>)" class="btn btn-sm btn-danger">
-                                            <i class="fas fa-trash"></i> Sil
-                                        </a>
+            <div class="table-responsive">
+                <table class="table table-striped table-hover table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col" width="80">#</th>
+                            <th scope="col" width="120">Görsel</th>
+                            <th scope="col">Başlık</th>
+                            <th scope="col" width="120">Tarih</th>
+                            <th scope="col" width="150">Kategori</th>
+                            <th scope="col" width="150">Yazar</th>
+                            <th scope="col" width="150">İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php if(mysqli_num_rows($result) > 0): ?>
+                            <?php $sira = 1; ?>
+                            <?php while($row = mysqli_fetch_assoc($result)): ?>
+                                <tr>
+                                    <td><?php echo $sira++; ?></td>
+                                    <td>
+                                        <?php if($row['image_url']): ?>
+                                            <img src="<?php echo htmlspecialchars($row['image_url']); ?>" class="img-thumbnail" alt="Blog Görseli" style="width: 80px; height: 60px; object-fit: cover;">
+                                        <?php else: ?>
+                                            <div class="text-center"><i class="fas fa-image text-muted"></i></div>
+                                        <?php endif; ?>
+                                    </td>
+                                    <td>
+                                        <strong><?php echo htmlspecialchars($row['title']); ?></strong>
+                                        <?php if(isset($row['content']) && !empty($row['content'])): ?>
+                                            <div class="small text-muted"><?php echo mb_substr(strip_tags($row['content']), 0, 100) . '...'; ?></div>
+                                        <?php endif; ?>
+                                    </td>
+                                    <td><?php echo date('d.m.Y', strtotime($row['created_at'])); ?></td>
+                                    <td>
+                                        <?php 
+                                        echo isset($row['category']) ? htmlspecialchars($row['category']) : '<span class="text-muted">Belirtilmemiş</span>'; 
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <?php 
+                                        echo isset($row['author']) ? htmlspecialchars($row['author']) : '<span class="text-muted">Belirtilmemiş</span>'; 
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <div class="btn-group" role="group">
+                                            <a href="../blog-detay.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-info" target="_blank" title="Görüntüle">
+                                                <i class="fas fa-eye"></i>
+                                            </a>
+                                            <a href="blog-duzenle.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-primary" title="Düzenle">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            <a href="javascript:void(0);" onclick="deleteBlog(<?php echo $row['id']; ?>)" class="btn btn-sm btn-danger" title="Sil">
+                                                <i class="fas fa-trash"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            <?php endwhile; ?>
+                        <?php else: ?>
+                            <tr>
+                                <td colspan="7" class="text-center py-4">
+                                    <div class="alert alert-info mb-0" role="alert">
+                                        <i class="fas fa-info-circle mr-2"></i> Henüz blog yazısı bulunmamaktadır.
                                     </div>
-                                </div>
-                            </div>
-                        <?php endwhile; ?>
-                    <?php else: ?>
-                        <div class="col-12">
-                            <div class="alert alert-info" role="alert">
-                                Henüz blog yazısı bulunmamaktadır.
-                            </div>
-                        </div>
-                    <?php endif; ?>
-                </div>
+                                </td>
+                            </tr>
+                        <?php endif; ?>
+                    </tbody>
+                </table>
+            </div>
             </main>
         </div>
     </div>
